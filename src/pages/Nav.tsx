@@ -4,9 +4,9 @@ import { Link } from "react-router-dom"
 export const Navbar = () => {
 
     return (
-        <div className="p-8 bg-white min-h-screen">
-            <div className="flex justify-between items-center px-14">
-                <div className="ml-20">
+        <div className="p-8">
+            <div className="flex justify-between items-center">
+                <div className="ml-2">
                     <Link to={"/"}><h1 className="text-3xl font-bold"><span className="text-indigo-500">Tech</span>Spark</h1></Link>
                 </div>
                 <div className="flex justify-between items-center gap-10">
