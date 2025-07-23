@@ -1,29 +1,38 @@
-
-
 export const Footer = () => {
-
-    return (
-        <div className="mt-10 py-4 bg-indigo-600 ml-10 flex justify-between items-center px-18 h-42 mb-8 rounded-b-4xl">
-            <div className="flex flex-col justify-center items-start gap-2 ">
-                <h1 className="text-xl text-white font-bold mb-4">About</h1>
-                <p className="text-lg font-base text-gray-300 cursor-pointer hover:text-gray-400">Product</p>
-                <p className="text-lg font-base text-gray-300 cursor-pointer hover:text-gray-400 ">Company</p>
-            </div>
-            <div className="flex flex-col justify-center items-start gap-2 ">
-                <h1 className="text-xl text-white font-bold mb-4">Resources</h1>
-                <p className="text-lg font-base text-gray-300 cursor-pointer hover:text-gray-400">Blogs</p>
-                <p className="text-lg font-base text-gray-300 cursor-pointer hover:text-gray-400 ">Company</p>
-            </div>
-            <div className="flex flex-col justify-center items-start gap-2 ">
-                <h1 className="text-xl text-white font-bold mb-4">Company</h1>
-                <p className="text-lg font-base text-gray-300 cursor-pointer hover:text-gray-400">Address</p>
-                <p className="text-lg font-base text-gray-300 cursor-pointer hover:text-gray-400 ">Address</p>
-            </div>
-            <div className="flex flex-col justify-center items-start gap-2 ">
-                <h1 className="text-xl text-white font-bold mb-4">Social</h1>
-                <p className="text-lg font-base text-gray-300 cursor-pointer hover:text-gray-400">Linkedin</p>
-                <p className="text-lg font-base text-gray-300  cursor-pointer hover:text-gray-400">Twitter (X)</p>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="mt-10 px-4 sm:px-6 lg:px-16">
+      <div className="bg-indigo-600 rounded-b-3xl py-8 px-4 md:px-10 flex flex-col md:flex-row justify-between gap-8">
+        {[
+          {
+            title: "About",
+            links: ["Product", "Company"],
+          },
+          {
+            title: "Resources",
+            links: ["Blogs", "Company"],
+          },
+          {
+            title: "Company",
+            links: ["Address", "Address"],
+          },
+          {
+            title: "Social",
+            links: ["Linkedin", "Twitter (X)"],
+          },
+        ].map((section, index) => (
+          <div key={index} className="flex flex-col gap-2">
+            <h1 className="text-xl text-white font-bold mb-2">{section.title}</h1>
+            {section.links.map((link, idx) => (
+              <p
+                key={idx}
+                className="text-base text-gray-300 hover:text-gray-400 cursor-pointer"
+              >
+                {link}
+              </p>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
